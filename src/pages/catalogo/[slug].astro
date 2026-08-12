@@ -16,7 +16,6 @@ const wa = linkWhatsApp(
   `Hola, quiero información sobre ${producto.nombre} (${producto.presentacion}).`
 );
 const rel = relacionados(producto);
-const etiqueta = producto.ancla ? "Producto ancla" : producto.categoria;
 ---
 
 <BaseLayout title={producto.nombre} description={producto.descripcion}>
@@ -33,7 +32,7 @@ const etiqueta = producto.ancla ? "Producto ancla" : producto.categoria;
         <span
           class="absolute top-4 left-4 z-10 rounded-full bg-morado-principal px-[11px] py-[5px] font-mono text-[10.5px] tracking-[.1em] text-white uppercase"
         >
-          {etiqueta}
+          {producto.categoria}
         </span>
         {
           producto.imagenFrente ? (
