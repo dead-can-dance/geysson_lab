@@ -5,6 +5,13 @@ import { productos } from "../../lib/productos";
 import { categorias } from "../../data/site";
 
 const chips = ["Todos", ...categorias];
+
+function normalizar(texto: string): string {
+  return texto
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase();
+}
 ---
 
 <BaseLayout
@@ -23,6 +30,15 @@ const chips = ["Todos", ...categorias];
       Sitio informativo. Consulta disponibilidad, presentaciones y puntos de venta por WhatsApp.
     </p>
 
+    <div class="mb-5 max-w-md">
+      <input
+        type="search"
+        id="buscador"
+        placeholder="Buscar por nombre, categoría o presentación…"
+        class="w-full rounded-lg border border-plata bg-white px-3.5 py-2.5 text-[15px] text-morado-oscuro outline-none focus:border-morado-principal"
+      />
+    </div>
+
     <div id="chips" class="mb-[34px] flex flex-wrap gap-2.5">
       {
         chips.map((c) => (
@@ -40,7 +56,11 @@ const chips = ["Todos", ...categorias];
     <div id="grid" class="grid grid-cols-2 gap-[22px] md:grid-cols-4">
       {
         productos.map((p) => (
-          <div data-categoria={p.categoria} class="producto-item">
+          <div
+            data-categoria={p.categoria}
+            data-search={normalizar(`${p.nombre} ${p.categoria} ${p.presentacion}`)}
+            class="producto-item"
+          >
             <ProductCard producto={p} />
           </div>
         ))
@@ -62,39 +82,56 @@ const chips = ["Todos", ...categorias];
   const items = Array.from(document.querySelectorAll<HTMLElement>(".producto-item"));
   const conteoTexto = document.getElementById("conteo-texto")!;
   const sinResultados = document.getElementById("sin-resultados")!;
+  const buscador = document.getElementById("buscador") as HTMLInputElement;
 
   const activeChip = "border-morado-principal bg-morado-principal text-white";
   const inactiveChip = "border-plata bg-white text-morado-oscuro";
 
-  function aplicarFiltro(categoria: string) {
+  function normalizar(texto: string): string {
+    return texto
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .toLowerCase();
+  }
+
+  let categoriaActual = "Todos";
+
+  function aplicarFiltros() {
+    const termino = normalizar(buscador.value.trim());
     let visibles = 0;
     for (const item of items) {
-      const coincide = categoria === "Todos" || item.dataset.categoria === categoria;
+      const coincideCategoria =
+        categoriaActual === "Todos" || item.dataset.categoria === categoriaActual;
+      const coincideBusqueda = termino === "" || (item.dataset.search ?? "").includes(termino);
+      const coincide = coincideCategoria && coincideBusqueda;
       item.classList.toggle("hidden", !coincide);
       if (coincide) visibles++;
     }
     sinResultados.classList.toggle("hidden", visibles > 0);
-    conteoTexto.textContent = `${visibles} productos · ${categoria.toLowerCase()}`;
+    conteoTexto.textContent = `${visibles} productos · ${categoriaActual.toLowerCase()}`;
 
     for (const chip of chipsContainer.querySelectorAll<HTMLButtonElement>(".chip")) {
-      const esActivo = chip.dataset.chip === categoria;
+      const esActivo = chip.dataset.chip === categoriaActual;
       chip.className = `chip rounded-full px-[17px] py-2.5 text-[13px] font-semibold border ${
         esActivo ? activeChip : inactiveChip
       }`;
     }
 
     const url = new URL(window.location.href);
-    if (categoria === "Todos") url.searchParams.delete("categoria");
-    else url.searchParams.set("categoria", categoria);
+    if (categoriaActual === "Todos") url.searchParams.delete("categoria");
+    else url.searchParams.set("categoria", categoriaActual);
     history.replaceState(null, "", url);
   }
 
   chipsContainer.addEventListener("click", (e) => {
     const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".chip");
     if (!btn?.dataset.chip) return;
-    aplicarFiltro(btn.dataset.chip);
+    categoriaActual = btn.dataset.chip;
+    aplicarFiltros();
   });
 
-  const inicial = new URLSearchParams(window.location.search).get("categoria") ?? "Todos";
-  aplicarFiltro(inicial);
+  buscador.addEventListener("input", aplicarFiltros);
+
+  categoriaActual = new URLSearchParams(window.location.search).get("categoria") ?? "Todos";
+  aplicarFiltros();
 </script>

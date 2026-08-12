@@ -3,18 +3,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
-import { productos, masConsultadosIds, porCategoria } from "../lib/productos";
+import { productos, masConsultadosSlugs, porCategoria } from "../lib/productos";
 import { categorias } from "../data/site";
 import { linkWhatsApp } from "../data/site";
 import testimonios from "../data/testimonios.json";
 
-const productoAncla = productos.find((p) => p.id === "compuesto")!;
+const productoAncla = productos.find((p) => p.slug === "compuesto")!;
 const waAncla = linkWhatsApp(
   `Hola, quiero información sobre ${productoAncla.nombre} (${productoAncla.presentacion}).`
 );
 
-const masConsultados = masConsultadosIds
-  .map((id) => productos.find((p) => p.id === id))
+const masConsultados = masConsultadosSlugs
+  .map((id) => productos.find((p) => p.slug === id))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 ---
 

@@ -2,6 +2,7 @@ import productosData from "../data/productos.json";
 
 export interface Producto {
   id: string;
+  slug: string;
   nombre: string;
   categoria: string;
   presentacion: string;
@@ -18,7 +19,7 @@ export const productos: Producto[] = productosData as Producto[];
 // Curaduría editorial de "más consultados" (alternativa honesta al
 // social-proof en vivo — ver PROJECT_BRIEF.md sección 3). Actualizar a mano
 // según Cloudflare Web Analytics una vez publicado.
-export const masConsultadosIds = ["compuesto", "vitagen", "aminocard", "edartryl"];
+export const masConsultadosSlugs = ["compuesto", "vitagen", "aminocard", "edartryl"];
 
 export function precioTexto(producto: Producto): string {
   return `$${producto.precio}.00 MXN`;

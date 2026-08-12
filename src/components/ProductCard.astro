@@ -11,10 +11,10 @@ const { producto, rank } = Astro.props;
 ---
 
 <a
-  href={`/catalogo/${producto.id}`}
+  href={`/catalogo/${producto.slug}`}
   class="group block overflow-hidden rounded-xl border border-borde-suave bg-white text-left transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_18px_34px_rgba(78,48,70,.14)]"
 >
-  <div class="relative aspect-[4/5] overflow-hidden">
+  <div class="bg-fondo-imagen relative aspect-[4/5] overflow-hidden">
     {
       rank && (
         <span class="absolute top-3 left-3 z-10 rounded-full bg-morado-principal px-2.5 py-1 font-mono text-[10.5px] tracking-[.1em] text-white">
@@ -27,7 +27,7 @@ const { producto, rank } = Astro.props;
         <img
           src={producto.imagenFrente}
           alt={producto.nombre}
-          class="absolute inset-0 h-full w-full object-cover"
+          class="absolute inset-0 h-full w-full object-contain"
           loading="lazy"
         />
       ) : (
@@ -41,7 +41,7 @@ const { producto, rank } = Astro.props;
         <img
           src={producto.imagenReverso}
           alt={`${producto.nombre} — modo de uso e ingredientes`}
-          class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
           loading="lazy"
         />
       ) : (

@@ -6,7 +6,7 @@ import { linkWhatsApp } from "../../data/site";
 
 export function getStaticPaths() {
   return productos.map((p) => ({
-    params: { slug: p.id },
+    params: { slug: p.slug },
     props: { producto: p },
   }));
 }
@@ -29,7 +29,7 @@ const etiqueta = producto.ancla ? "Producto ancla" : producto.categoria;
 
   <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-7 pt-7 pb-20 md:grid-cols-2 md:gap-[60px]">
     <div class="flex flex-col gap-3 md:sticky md:top-[92px] md:self-start">
-      <div class="group relative aspect-square overflow-hidden rounded-2xl">
+      <div class="bg-fondo-imagen group relative aspect-square overflow-hidden rounded-2xl">
         <span
           class="absolute top-4 left-4 z-10 rounded-full bg-morado-principal px-[11px] py-[5px] font-mono text-[10.5px] tracking-[.1em] text-white uppercase"
         >
@@ -40,7 +40,7 @@ const etiqueta = producto.ancla ? "Producto ancla" : producto.categoria;
             <img
               src={producto.imagenFrente}
               alt={producto.nombre}
-              class="absolute inset-0 h-full w-full object-cover"
+              class="absolute inset-0 h-full w-full object-contain"
             />
           ) : (
             <div class="bg-placeholder-frente absolute inset-0 flex items-end p-5">
@@ -55,7 +55,7 @@ const etiqueta = producto.ancla ? "Producto ancla" : producto.categoria;
             <img
               src={producto.imagenReverso}
               alt={`${producto.nombre} — modo de uso e ingredientes`}
-              class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+              class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
             />
           ) : (
             <div class="bg-placeholder-trasera absolute inset-0 flex items-end p-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
