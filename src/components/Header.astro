@@ -1,0 +1,94 @@
+---
+import { linkWhatsApp } from "../data/site";
+
+const waGeneral = linkWhatsApp("Hola, tengo una duda sobre los productos Neurocebryl.");
+
+const navItems = [
+  { href: "/", label: "Inicio" },
+  { href: "/catalogo", label: "Catálogo" },
+  { href: "/neurocebryl", label: "Salud cognitiva" },
+  { href: "/empresa", label: "Empresa" },
+];
+
+const path = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-[60] bg-morado-oscuro text-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-7 px-7 py-4">
+    <a
+      href="/"
+      class="flex items-baseline gap-px font-serif text-[23px] tracking-[.02em] text-white hover:text-white"
+    >
+      <span class="font-semibold">NEURO</span><span
+        class="font-light italic text-rosa-grisaceo">cebryl</span
+      >
+    </a>
+
+    <nav class="hidden items-center gap-6 text-[14.5px] md:flex">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "border-b py-1.5 text-texto-header hover:border-rosa-grisaceo hover:text-white",
+              path === item.href ? "border-rosa-grisaceo text-white" : "border-transparent",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={waGeneral}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-verde-accion px-5 py-2.5 text-sm font-bold text-white hover:bg-verde-accion-hover hover:text-white"
+      >
+        <span class="h-2 w-2 rounded-full bg-white opacity-90"></span>
+        <span class="hidden sm:inline">Escríbenos</span>
+      </a>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-movil"
+        aria-label="Abrir menú"
+        class="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-white/35 md:hidden"
+      >
+        <span class="h-px w-4 bg-white"></span>
+        <span class="h-px w-4 bg-white"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="menu-movil" class="hidden flex-col gap-1 border-t border-white/15 px-7 py-3 md:hidden">
+    {
+      navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "rounded-lg px-2 py-2.5 text-[15px]",
+            path === item.href ? "bg-white/10 text-white" : "text-texto-header",
+          ]}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle")!;
+  const menu = document.getElementById("menu-movil")!;
+
+  toggle.addEventListener("click", () => {
+    const abierto = menu.classList.toggle("flex");
+    menu.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(abierto));
+  });
+</script>

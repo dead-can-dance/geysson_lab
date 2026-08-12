@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, linkWhatsApp } from "../data/site";
+
+const wa = linkWhatsApp("Hola, quiero información sobre los productos Neurocebryl.");
+---
+
+<BaseLayout
+  title="Contacto"
+  description="Contacta a Neurocebryl por WhatsApp, redes sociales o formulario de contacto."
+>
+  <section class="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-7 py-20 md:grid-cols-2">
+    <div>
+      <span class="mb-2.5 block font-mono text-[11.5px] tracking-[.14em] text-lavanda-gris uppercase">
+        Contacto
+      </span>
+      <h1 class="m-0 mb-5 font-serif text-[44px] tracking-tight text-morado-oscuro">
+        Hablemos por WhatsApp
+      </h1>
+      <p class="mb-8 max-w-md text-[15.5px] leading-relaxed text-morado-medio">
+        Sitio informativo, sin compras en línea. La vía más rápida para consultar disponibilidad,
+        presentaciones y puntos de venta es WhatsApp.
+      </p>
+
+      <a
+        href={wa}
+        target="_blank"
+        rel="noopener"
+        class="mb-10 inline-flex items-center gap-2.5 rounded-full bg-verde-accion px-7 py-4 text-[15px] font-bold text-white hover:bg-verde-accion-hover hover:text-white"
+      >
+        <span class="h-2 w-2 rounded-full bg-white opacity-90"></span>Escribir por WhatsApp
+      </a>
+
+      <dl class="flex flex-col gap-4 border-t border-borde-suave pt-8 text-[14px]">
+        <div class="flex justify-between gap-4">
+          <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Marca</dt>
+          <dd class="text-morado-oscuro">{site.nombre}</dd>
+        </div>
+        <div class="flex justify-between gap-4">
+          <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Razón social</dt>
+          <dd class="text-morado-oscuro">{site.razonSocial}</dd>
+        </div>
+        <div class="flex justify-between gap-4">
+          <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Facebook</dt>
+          <dd class="text-morado-medio">pendiente</dd>
+        </div>
+        <div class="flex justify-between gap-4">
+          <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Instagram</dt>
+          <dd class="text-morado-medio">pendiente</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div>
+      <h2 class="m-0 mb-5 font-serif text-2xl tracking-tight text-morado-oscuro">
+        Formulario de contacto
+      </h2>
+      <form
+        id="form-contacto"
+        class="flex flex-col gap-4 rounded-2xl border border-borde-suave bg-crema p-7"
+      >
+        <div>
+          <label for="nombre" class="mb-1.5 block text-[13px] font-semibold text-morado-oscuro"
+            >Nombre</label
+          >
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            required
+            class="w-full rounded-lg border border-plata bg-white px-3.5 py-2.5 text-[15px] text-morado-oscuro outline-none focus:border-morado-principal"
+          />
+        </div>
+        <div>
+          <label for="correo" class="mb-1.5 block text-[13px] font-semibold text-morado-oscuro"
+            >Correo o teléfono</label
+          >
+          <input
+            id="correo"
+            name="correo"
+            type="text"
+            required
+            class="w-full rounded-lg border border-plata bg-white px-3.5 py-2.5 text-[15px] text-morado-oscuro outline-none focus:border-morado-principal"
+          />
+        </div>
+        <div>
+          <label for="mensaje" class="mb-1.5 block text-[13px] font-semibold text-morado-oscuro"
+            >Mensaje</label
+          >
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            required
+            class="w-full rounded-lg border border-plata bg-white px-3.5 py-2.5 text-[15px] text-morado-oscuro outline-none focus:border-morado-principal"
+          ></textarea>
+        </div>
+
+        <!--
+          TODO (pendiente de publicación): widget de Cloudflare Turnstile.
+          Requiere un site key real, emitido desde el dashboard de Cloudflare
+          una vez que el dominio esté dado de alta — ver PROJECT_BRIEF.md
+          secciones 4 y 8. Sustituir por:
+          <div class="cf-turnstile" data-sitekey="TU_SITE_KEY"></div>
+          y cargar https://challenges.cloudflare.com/turnstile/v0/api.js
+        -->
+        <div class="rounded-lg border border-dashed border-rosa-grisaceo p-3 font-mono text-[11px] text-morado-medio">
+          [placeholder] widget Cloudflare Turnstile — pendiente de site key
+        </div>
+
+        <button
+          type="submit"
+          class="mt-1 rounded-full bg-morado-principal px-6 py-3 text-[15px] font-bold text-white hover:bg-morado-medio"
+        >
+          Enviar mensaje
+        </button>
+        <p id="form-estado" class="hidden text-[13.5px] text-morado-medio" role="status"></p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // TODO (pendiente de publicación): conectar a una Cloudflare Pages
+  // Function en /api/contacto que valide el token de Turnstile y envíe el
+  // correo al buzón receptor (aún no definido — PROJECT_BRIEF.md sección 8).
+  const form = document.getElementById("form-contacto") as HTMLFormElement;
+  const estado = document.getElementById("form-estado")!;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    estado.textContent =
+      "Formulario aún no conectado al backend (pendiente de hosting/dominio final).";
+    estado.classList.remove("hidden");
+  });
+</script>

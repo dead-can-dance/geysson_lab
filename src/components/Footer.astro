@@ -1,0 +1,25 @@
+---
+import { linkWhatsApp } from "../data/site";
+
+const waGeneral = linkWhatsApp("Hola, tengo una duda sobre los productos Neurocebryl.");
+---
+
+<footer class="bg-morado-oscuro text-[13.5px] text-rosa-grisaceo">
+  <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-7 px-7 pt-[52px] pb-[34px]">
+    <div class="max-w-[280px]">
+      <div class="mb-3 font-serif text-xl tracking-[.02em] text-white">NEUROCEBRYL</div>
+      <p class="leading-relaxed">
+        Catálogo informativo de suplementos alimenticios Geysson. No realizamos ventas ni pagos
+        en línea.
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-8">
+      <a href="/catalogo" class="text-rosa-grisaceo hover:text-white">Catálogo</a>
+      <a href="/empresa" class="text-rosa-grisaceo hover:text-white">Empresa</a>
+      <a href="/contacto" class="text-rosa-grisaceo hover:text-white">Contacto</a>
+      <a href={waGeneral} target="_blank" rel="noopener" class="text-rosa-grisaceo hover:text-white"
+        >WhatsApp</a
+      >
+    </div>
+  </div>
+</footer>

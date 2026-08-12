@@ -1,0 +1,24 @@
+---
+interface Props {
+  estrellas: number;
+  texto: string;
+  autor: string;
+}
+
+const { estrellas, texto, autor } = Astro.props;
+---
+
+<div class="rounded-xl border border-borde-suave bg-white p-[26px]">
+  <div class="mb-3.5 text-sm tracking-[.1em] text-estrellas" aria-hidden="true">
+    {"★".repeat(estrellas)}{"☆".repeat(5 - estrellas)}
+  </div>
+  <p class="mb-[18px] font-serif text-lg leading-relaxed text-morado-oscuro text-pretty">
+    {texto}
+  </p>
+  <div class="flex items-center gap-2.5 text-[12.5px] font-semibold text-morado-medio">
+    {autor}
+    <span class="rounded-full bg-hueso px-2 py-[3px] font-mono text-[10.5px] font-normal text-morado-principal">
+      testimonio curado
+    </span>
+  </div>
+</div>

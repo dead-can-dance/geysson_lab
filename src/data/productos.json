@@ -1,0 +1,382 @@
+[
+  {
+    "id": "P001",
+    "nombre": "Neurovigor SX",
+    "slug": "neurovigor",
+    "categoria": "Salud Masculina",
+    "linea": "Neurovigor",
+    "presentacion": "Ampolletas",
+    "precio": 155,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/neurovigor/frente.png",
+    "imagenReverso": "/productos/neurovigor/reverso.png"
+  },
+  {
+    "id": "P002",
+    "nombre": "HV Vitagen Black Pill",
+    "slug": "vitagen",
+    "categoria": "Salud Masculina",
+    "linea": "HV Vitagen",
+    "presentacion": "Cápsulas",
+    "precio": 230,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/vitagen/frente.png",
+    "imagenReverso": "/productos/vitagen/reverso.png"
+  },
+  {
+    "id": "P003",
+    "nombre": "Edartryl 3 en 1",
+    "slug": "edartryl",
+    "categoria": "Articulaciones y Huesos",
+    "linea": "Edartryl",
+    "presentacion": "Kit",
+    "precio": 155,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/edartryl/frente.png",
+    "imagenReverso": "/productos/edartryl/reverso.png"
+  },
+  {
+    "id": "P004",
+    "nombre": "Vitampol Fuerte",
+    "slug": "vitampol",
+    "categoria": "Energía y Vitalidad",
+    "linea": "Vitampol",
+    "presentacion": "Ampolletas",
+    "precio": 145,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/vitampol/frente.png",
+    "imagenReverso": "/productos/vitampol/reverso.jpeg"
+  },
+  {
+    "id": "P005",
+    "nombre": "L-Carnachof Rhodiola",
+    "slug": "carnachof",
+    "categoria": "Metabolismo y Control de Peso",
+    "linea": "L-Carnachof",
+    "presentacion": "Cápsulas",
+    "precio": 185,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/carnachof/frente.png",
+    "imagenReverso": "/productos/carnachof/reverso.jpeg"
+  },
+  {
+    "id": "P006",
+    "nombre": "Neurocebryl Compuesto Jarabe",
+    "slug": "compuesto-jarabe",
+    "categoria": "Salud Cognitiva",
+    "linea": "Neurocebryl",
+    "presentacion": "Jarabe",
+    "precio": 75,
+    "ancla": true,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/compuesto-jarabe/frente.png",
+    "imagenReverso": "/productos/compuesto-jarabe/reverso.jpeg"
+  },
+  {
+    "id": "P007",
+    "nombre": "Neurocebryl Foretin",
+    "slug": "foretin",
+    "categoria": "Salud Cognitiva",
+    "linea": "Neurocebryl",
+    "presentacion": "Ampolletas",
+    "precio": 155,
+    "ancla": true,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/foretin/frente.png",
+    "imagenReverso": "/productos/foretin/reverso.jpeg"
+  },
+  {
+    "id": "P008",
+    "nombre": "Vitampol Infantil",
+    "slug": "infantil",
+    "categoria": "Infantil",
+    "linea": "Vitampol",
+    "presentacion": "Frasco",
+    "precio": 80,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/infantil/frente.png",
+    "imagenReverso": "/productos/infantil/reverso.jpeg"
+  },
+  {
+    "id": "P009",
+    "nombre": "Neurocebryl Tableta",
+    "slug": "tableta",
+    "categoria": "Salud Cognitiva",
+    "linea": "Neurocebryl",
+    "presentacion": "Tabletas",
+    "precio": 90,
+    "ancla": true,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/tableta/frente.png",
+    "imagenReverso": "/productos/tableta/reverso.jpeg"
+  },
+  {
+    "id": "P010",
+    "nombre": "Hierrovit con Calcio",
+    "slug": "hierrovit",
+    "categoria": "Vitaminas y Minerales",
+    "linea": "Hierrovit",
+    "presentacion": "Jarabe",
+    "precio": 85,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/hierrovit/frente.png",
+    "imagenReverso": "/productos/hierrovit/reverso.jpeg"
+  },
+  {
+    "id": "P011",
+    "nombre": "Suketyl Balsámico Jarabe",
+    "slug": "suketyl",
+    "categoria": "Respiratorio",
+    "linea": "Suketyl",
+    "presentacion": "Jarabe",
+    "precio": 90,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/suketyl/frente.png",
+    "imagenReverso": "/productos/suketyl/reverso.jpeg"
+  },
+  {
+    "id": "P012",
+    "nombre": "Neurocebryl Compuesto",
+    "slug": "compuesto",
+    "categoria": "Salud Cognitiva",
+    "linea": "Neurocebryl",
+    "presentacion": "Ampolletas",
+    "precio": 155,
+    "ancla": true,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/compuesto/frente.jpg",
+    "imagenReverso": "/productos/compuesto/reverso.jpeg"
+  },
+  {
+    "id": "P013",
+    "nombre": "Fortalex TS",
+    "slug": "fortalex",
+    "categoria": "Energía y Vitalidad",
+    "linea": "Fortalex",
+    "presentacion": "Ampolletas",
+    "precio": 95,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/fortalex/frente.png",
+    "imagenReverso": "/productos/fortalex/reverso.jpeg"
+  },
+  {
+    "id": "P014",
+    "nombre": "Campolonet B12",
+    "slug": "campolonet",
+    "categoria": "Energía y Vitalidad",
+    "linea": "Campolonet",
+    "presentacion": "Ampolletas",
+    "precio": 135,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/campolonet/frente.png",
+    "imagenReverso": "/productos/campolonet/reverso.jpeg"
+  },
+  {
+    "id": "P015",
+    "nombre": "HV Vitagen",
+    "slug": "vitagen-hv",
+    "categoria": "Salud Masculina",
+    "linea": "HV Vitagen",
+    "presentacion": "Ampolletas",
+    "precio": 155,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/vitagen-hv/frente.png",
+    "imagenReverso": "/productos/vitagen-hv/reverso.jpeg"
+  },
+  {
+    "id": "P016",
+    "nombre": "Bacalciferol",
+    "slug": "bacalciferol",
+    "categoria": "Vitaminas y Minerales",
+    "linea": "Bacalciferol",
+    "presentacion": "Jarabe",
+    "precio": 75,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/bacalciferol/frente.png",
+    "imagenReverso": "/productos/bacalciferol/reverso.jpeg"
+  },
+  {
+    "id": "P017",
+    "nombre": "HGC3",
+    "slug": "hgc3",
+    "categoria": "Metabolismo y Control de Peso",
+    "linea": "HGC3",
+    "presentacion": "Kit",
+    "precio": 155,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/hgc3/frente.png",
+    "imagenReverso": "/productos/hgc3/reverso.jpeg"
+  },
+  {
+    "id": "P018",
+    "nombre": "Ginkgotiamin GL",
+    "slug": "ginkgotiamin",
+    "categoria": "Salud Cognitiva",
+    "linea": "Ginkgotiamin",
+    "presentacion": "Ampolletas",
+    "precio": 145,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/ginkgotiamin/frente.png",
+    "imagenReverso": "/productos/ginkgotiamin/reverso.jpeg"
+  },
+  {
+    "id": "P019",
+    "nombre": "Aminocard Sport",
+    "slug": "aminocard",
+    "categoria": "Rendimiento Deportivo",
+    "linea": "Aminocard",
+    "presentacion": "Cápsulas",
+    "precio": 230,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/aminocard/frente.png",
+    "imagenReverso": "/productos/aminocard/reverso.jpeg"
+  },
+  {
+    "id": "P020",
+    "nombre": "Taurilaif",
+    "slug": "taurilaif",
+    "categoria": "Energía y Vitalidad",
+    "linea": "Taurilaif",
+    "presentacion": "Ampolletas",
+    "precio": 145,
+    "ancla": false,
+    "listoParaPublicar": false,
+    "metaTitle": null,
+    "metaDescription": null,
+    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "beneficios": [
+      "Información de beneficios pendiente de aprobación del cliente."
+    ],
+    "imagenFrente": "/productos/taurilaif/frente.png",
+    "imagenReverso": "/productos/taurilaif/reverso.jpeg"
+  }
+]

@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta oficial Neurocebryl — ver PROJECT_BRIEF.md sección 6 */
+  --color-morado-principal: #4e3046;
+  --color-morado-oscuro: #3c2135;
+  --color-morado-medio: #765c68;
+  --color-lavanda-gris: #9b8790;
+  --color-rosa-grisaceo: #c2b3b9;
+  --color-plata: #d9d9d9;
+  --color-verde-accion: #53b848;
+  --color-verde-accion-hover: #48a33e;
+
+  /* Tonos derivados usados en el diseño aprobado (fondos, bordes, texto claro) */
+  --color-crema: #fbf7f8;
+  --color-hueso: #ede4e8;
+  --color-lavanda-clara: #dccfd5;
+  --color-borde-suave: #ece6e9;
+  --color-fondo-imagen: #f4eff1;
+  --color-patron-imagen: #e7dce2;
+  --color-texto-header: #ede4e8;
+  --color-estrellas: #8e2a44;
+  --color-aviso-fondo: #fbf3e9;
+  --color-aviso-borde: #efddbe;
+  --color-aviso-texto: #8a5a17;
+
+  --font-serif: "Newsreader", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-morado-oscuro);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-rosa-grisaceo);
+}
+
+/* Fondo "placeholder" a rayas: usado en toda la ficha/tarjetas de producto
+   mientras no hay fotografía real de producto (ver PROJECT_BRIEF.md sección 7) */
+.bg-placeholder-frente {
+  background-color: var(--color-fondo-imagen);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-patron-imagen) 0 1px,
+    transparent 1px 9px
+  );
+}
+
+.bg-placeholder-trasera {
+  background-color: var(--color-hueso);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-lavanda-clara) 0 1px,
+    transparent 1px 9px
+  );
+}

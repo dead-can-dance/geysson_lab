@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { productosAncla } from "../lib/productos";
+import { linkWhatsApp } from "../data/site";
+
+const anclas = productosAncla();
+const wa = linkWhatsApp("Hola, quiero información sobre la línea Neurocebryl.");
+---
+
+<BaseLayout
+  title="Línea Neurocebryl"
+  description="Conoce la línea ancla Neurocebryl: la fórmula original de Geysson para bienestar cognitivo."
+>
+  <div class="bg-gradient-to-br from-morado-oscuro via-morado-principal to-morado-medio text-white">
+    <div class="mx-auto max-w-6xl px-7 pt-20 pb-16">
+      <div
+        class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/35 px-[15px] py-2 font-mono text-[11.5px] tracking-[.12em] text-texto-header uppercase"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-rosa-grisaceo"></span>Línea ancla · Geysson
+      </div>
+      <h1 class="m-0 max-w-2xl text-pretty font-serif text-[44px] leading-[1.08] tracking-tight text-white md:text-[50px]">
+        Neurocebryl: la fórmula original que respalda tu bienestar cognitivo.
+      </h1>
+      <p class="mt-5 max-w-[560px] text-pretty text-[17px] leading-relaxed text-lavanda-clara">
+        Presentaciones pensadas para distintos hábitos de consumo, todas con la misma fórmula
+        Neurocebryl de Geysson.
+      </p>
+      <a
+        href={wa}
+        target="_blank"
+        rel="noopener"
+        class="mt-8 inline-flex items-center gap-2.5 rounded-full bg-verde-accion px-7 py-[15px] text-[15px] font-bold text-white hover:bg-verde-accion-hover hover:text-white"
+      >
+        <span class="h-2 w-2 rounded-full bg-white opacity-90"></span>Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <section class="mx-auto max-w-6xl px-7 py-16">
+    <h2 class="m-0 mb-7 font-serif text-[32px] tracking-tight text-morado-oscuro">
+      Presentaciones de la línea
+    </h2>
+    <div class="grid grid-cols-2 gap-[22px] md:grid-cols-4">
+      {anclas.map((p) => <ProductCard producto={p} />)}
+    </div>
+    <div class="mt-8 rounded-xl border border-dashed border-rosa-grisaceo p-[22px] font-mono text-xs leading-relaxed text-morado-medio">
+      Nota de desarrollo: el catálogo de muestra incluye {anclas.length} de las 4 presentaciones
+      ancla reales (Compuesto, Compuesto Jarabe, Tableta, Foretin). Esta página se completa sola
+      al regenerar el JSON desde "07 Export web" del PIM — ver src/data/README.md.
+    </div>
+  </section>
+</BaseLayout>

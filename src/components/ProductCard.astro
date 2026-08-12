@@ -1,0 +1,68 @@
+---
+import type { Producto } from "../lib/productos";
+import { precioTexto } from "../lib/productos";
+
+interface Props {
+  producto: Producto;
+  rank?: string;
+}
+
+const { producto, rank } = Astro.props;
+---
+
+<a
+  href={`/catalogo/${producto.id}`}
+  class="group block overflow-hidden rounded-xl border border-borde-suave bg-white text-left transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_18px_34px_rgba(78,48,70,.14)]"
+>
+  <div class="relative aspect-[4/5] overflow-hidden">
+    {
+      rank && (
+        <span class="absolute top-3 left-3 z-10 rounded-full bg-morado-principal px-2.5 py-1 font-mono text-[10.5px] tracking-[.1em] text-white">
+          {rank}
+        </span>
+      )
+    }
+    {
+      producto.imagenFrente ? (
+        <img
+          src={producto.imagenFrente}
+          alt={producto.nombre}
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <div class="bg-placeholder-frente absolute inset-0 flex items-end p-3.5">
+          <span class="font-mono text-[10.5px] leading-relaxed text-morado-medio">foto frontal</span>
+        </div>
+      )
+    }
+    {
+      producto.imagenReverso ? (
+        <img
+          src={producto.imagenReverso}
+          alt={`${producto.nombre} — modo de uso e ingredientes`}
+          class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          loading="lazy"
+        />
+      ) : (
+        <div class="bg-placeholder-trasera absolute inset-0 flex items-end p-3.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+          <span class="font-mono text-[10.5px] leading-relaxed text-morado-principal">
+            foto trasera — modo de uso e ingredientes
+          </span>
+        </div>
+      )
+    }
+  </div>
+  <div class="px-4 pt-4 pb-[18px]">
+    <div class="font-mono text-[10.5px] tracking-[.08em] text-lavanda-gris uppercase">
+      {producto.categoria}
+    </div>
+    <div class="my-1.5 font-serif text-[19px] leading-tight text-morado-oscuro">
+      {producto.nombre}
+    </div>
+    <div class="flex items-center justify-between text-[13.5px] text-morado-medio">
+      <span>{precioTexto(producto)}</span>
+      <span class="text-[13px] font-semibold text-morado-principal">Ver ficha →</span>
+    </div>
+  </div>
+</a>

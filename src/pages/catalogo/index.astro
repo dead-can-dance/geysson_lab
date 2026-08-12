@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { productos } from "../../lib/productos";
+import { categorias } from "../../data/site";
+
+const chips = ["Todos", ...categorias];
+---
+
+<BaseLayout
+  title="Catálogo"
+  description="Explora el catálogo de suplementos alimenticios Neurocebryl por categoría. Consulta disponibilidad y presentaciones por WhatsApp."
+>
+  <section class="mx-auto max-w-6xl px-7 pt-14 pb-6">
+    <span
+      id="conteo-texto"
+      class="mb-2.5 block font-mono text-[11.5px] tracking-[.14em] text-lavanda-gris uppercase"
+    >
+      {productos.length} productos · todos
+    </span>
+    <h1 class="m-0 mb-2 font-serif text-[44px] tracking-tight text-morado-oscuro">Catálogo</h1>
+    <p class="m-0 mb-[30px] max-w-[560px] text-[15.5px] leading-relaxed text-morado-medio">
+      Sitio informativo. Consulta disponibilidad, presentaciones y puntos de venta por WhatsApp.
+    </p>
+
+    <div id="chips" class="mb-[34px] flex flex-wrap gap-2.5">
+      {
+        chips.map((c) => (
+          <button
+            type="button"
+            data-chip={c}
+            class="chip rounded-full border border-plata px-[17px] py-2.5 text-[13px] font-semibold text-morado-oscuro hover:border-morado-principal"
+          >
+            {c}
+          </button>
+        ))
+      }
+    </div>
+
+    <div id="grid" class="grid grid-cols-2 gap-[22px] md:grid-cols-4">
+      {
+        productos.map((p) => (
+          <div data-categoria={p.categoria} class="producto-item">
+            <ProductCard producto={p} />
+          </div>
+        ))
+      }
+    </div>
+
+    <p id="sin-resultados" class="hidden py-16 text-center text-[15px] text-morado-medio">
+      No hay productos en esta categoría por el momento.
+    </p>
+
+    <p class="mt-6 text-center font-mono text-[11.5px] text-lavanda-gris">
+      pasa el cursor sobre una tarjeta para ver el intercambio frente / información trasera
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  const chipsContainer = document.getElementById("chips")!;
+  const items = Array.from(document.querySelectorAll<HTMLElement>(".producto-item"));
+  const conteoTexto = document.getElementById("conteo-texto")!;
+  const sinResultados = document.getElementById("sin-resultados")!;
+
+  const activeChip = "border-morado-principal bg-morado-principal text-white";
+  const inactiveChip = "border-plata bg-white text-morado-oscuro";
+
+  function aplicarFiltro(categoria: string) {
+    let visibles = 0;
+    for (const item of items) {
+      const coincide = categoria === "Todos" || item.dataset.categoria === categoria;
+      item.classList.toggle("hidden", !coincide);
+      if (coincide) visibles++;
+    }
+    sinResultados.classList.toggle("hidden", visibles > 0);
+    conteoTexto.textContent = `${visibles} productos · ${categoria.toLowerCase()}`;
+
+    for (const chip of chipsContainer.querySelectorAll<HTMLButtonElement>(".chip")) {
+      const esActivo = chip.dataset.chip === categoria;
+      chip.className = `chip rounded-full px-[17px] py-2.5 text-[13px] font-semibold border ${
+        esActivo ? activeChip : inactiveChip
+      }`;
+    }
+
+    const url = new URL(window.location.href);
+    if (categoria === "Todos") url.searchParams.delete("categoria");
+    else url.searchParams.set("categoria", categoria);
+    history.replaceState(null, "", url);
+  }
+
+  chipsContainer.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".chip");
+    if (!btn?.dataset.chip) return;
+    aplicarFiltro(btn.dataset.chip);
+  });
+
+  const inicial = new URLSearchParams(window.location.search).get("categoria") ?? "Todos";
+  aplicarFiltro(inicial);
+</script>
