@@ -16,9 +16,12 @@ const wa = linkWhatsApp(
   `Hola, quiero información sobre ${producto.nombre} (${producto.presentacion}).`
 );
 const rel = relacionados(producto);
+const metaDescripcion =
+  producto.descripcion ||
+  `${producto.nombre} — ${producto.presentacion}. Consulta disponibilidad por WhatsApp.`;
 ---
 
-<BaseLayout title={producto.nombre} description={producto.descripcion}>
+<BaseLayout title={producto.nombre} description={metaDescripcion}>
   <div class="mx-auto flex max-w-6xl items-center gap-2 px-7 pt-[26px] font-mono text-[11.5px] text-lavanda-gris">
     <a href="/catalogo" class="font-mono text-[11.5px] text-morado-medio hover:text-morado-oscuro"
       >catálogo</a
@@ -78,9 +81,13 @@ const rel = relacionados(producto);
         {producto.nombre}
       </h1>
       <div class="mb-[22px] text-[22px] font-bold text-morado-oscuro">{precioTexto(producto)}</div>
-      <p class="mb-[30px] max-w-[520px] text-pretty text-base leading-relaxed text-morado-principal">
-        {producto.descripcion}
-      </p>
+      {
+        producto.descripcion && (
+          <p class="mb-[30px] max-w-[520px] text-pretty text-base leading-relaxed text-morado-principal">
+            {producto.descripcion}
+          </p>
+        )
+      }
 
       <div class="border-t border-borde-suave py-6">
         <h3 class="mb-3.5 font-mono text-[11.5px] font-medium tracking-[.12em] text-lavanda-gris uppercase">

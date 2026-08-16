@@ -8,12 +8,14 @@
     "presentacion": "Ampolletas",
     "precio": 155,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al bienestar y la vitalidad en adultos.",
+      "Complementa la alimentación de adultos con ritmo de vida demandante.",
+      "Aporta vitaminas y nutrientes esenciales para complementar la alimentación diaria."
     ],
     "imagenFrente": "/productos/neurovigor/frente.png",
     "imagenReverso": "/productos/neurovigor/reverso.png"
@@ -27,12 +29,14 @@
     "presentacion": "Cápsulas",
     "precio": 230,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Apoya la vitalidad y el bienestar general en adultos.",
+      "Contiene ingredientes tradicionalmente utilizados en fórmulas para el bienestar masculino.",
+      "Aporta antioxidantes al organismo"
     ],
     "imagenFrente": "/productos/vitagen/frente.png",
     "imagenReverso": "/productos/vitagen/reverso.png"
@@ -46,12 +50,14 @@
     "presentacion": "Kit",
     "precio": 155,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Aporta ingredientes que complementan la alimentación de personas con desgaste articular.",
+      "Apoya el bienestar y la movilidad en las actividades diarias.",
+      "Contribuye al mantenimiento de huesos en condiciones normales."
     ],
     "imagenFrente": "/productos/edartryl/frente.png",
     "imagenReverso": "/productos/edartryl/reverso.png"
@@ -65,12 +71,14 @@
     "presentacion": "Ampolletas",
     "precio": 145,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Aporta nutrientes esenciales que complementan una alimentación equilibrada.",
+      "Contribuye al mantenimiento de las defensas del organismo.",
+      "Apoya el desarrollo durante etapas de crecimiento y el bienestar diario."
     ],
     "imagenFrente": "/productos/vitampol/frente.png",
     "imagenReverso": "/productos/vitampol/reverso.jpeg"
@@ -84,12 +92,15 @@
     "presentacion": "Cápsulas",
     "precio": 185,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Complementa la alimentación dentro de un plan de control de peso.",
+      "Contribuye al mantenimiento de niveles normales de lípidos como parte de una dieta equilibrada.",
+      "Apoya el tránsito intestinal normal.",
+      "Complementa la alimentación de personas con rutina de actividad física."
     ],
     "imagenFrente": "/productos/carnachof/frente.png",
     "imagenReverso": "/productos/carnachof/reverso.jpeg"
@@ -103,12 +114,14 @@
     "presentacion": "Jarabe",
     "precio": 75,
     "ancla": true,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al bienestar físico y mental en las actividades cotidianas.",
+      "Contribuye al mantenimiento de la función cognitiva normal.",
+      "Complementa la alimentación diaria de niños y adultos."
     ],
     "imagenFrente": "/productos/compuesto-jarabe/frente.png",
     "imagenReverso": "/productos/compuesto-jarabe/reverso.jpeg"
@@ -122,12 +135,14 @@
     "presentacion": "Ampolletas",
     "precio": 155,
     "ancla": true,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Complementa las necesidades nutricionales del adulto mayor.",
+      "Contribuye al mantenimiento de las defensas del organismo.",
+      "Apoya el metabolismo energético normal."
     ],
     "imagenFrente": "/productos/foretin/frente.png",
     "imagenReverso": "/productos/foretin/reverso.jpeg"
@@ -141,12 +156,16 @@
     "presentacion": "Frasco",
     "precio": 80,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al desarrollo y crecimiento durante la infancia y la adolescencia",
+      "Apoya el aporte de vitaminas y nutrientes esenciales para el bienestar diario",
+      "Contribuye al mantenimiento de las defensas del organismo",
+      "Apoya el desarrollo y fortalecimiento de huesos y músculos",
+      "Complementa la alimentación de niños y adolescentes como parte de una dieta equilibrada"
     ],
     "imagenFrente": "/productos/infantil/frente.png",
     "imagenReverso": "/productos/infantil/reverso.jpeg"
@@ -160,12 +179,15 @@
     "presentacion": "Tabletas",
     "precio": 90,
     "ancla": true,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Apoya la concentración y el desempeño en actividades que requieren atención",
+      "Contribuye al mantenimiento de la función cognitiva como parte de un estilo de vida saludable",
+      "Aporta vitaminas y minerales esenciales para complementar la alimentación diaria",
+      "Contribuye al bienestar físico y mental en las actividades cotidianas"
     ],
     "imagenFrente": "/productos/tableta/frente.png",
     "imagenReverso": "/productos/tableta/reverso.jpeg"
@@ -179,12 +201,15 @@
     "presentacion": "Jarabe",
     "precio": 85,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al aporte de hierro y calcio como parte de una alimentación equilibrada",
+      "Apoya las necesidades nutricionales durante etapas de crecimiento y desarrollo",
+      "Contribuye al mantenimiento de huesos y dientes en condiciones normales",
+      "Apoya el bienestar general mediante el aporte de vitaminas y minerales esenciales"
     ],
     "imagenFrente": "/productos/hierrovit/frente.png",
     "imagenReverso": "/productos/hierrovit/reverso.jpeg"
@@ -198,12 +223,14 @@
     "presentacion": "Jarabe",
     "precio": 90,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Producto balsámico que contribuye al bienestar de la garganta.",
+      "Complemento con ingredientes balsámicos tradicionalmente usados en épocas frías.",
+      "Contribuye al bienestar respiratorio como parte de un estilo de vida saludable."
     ],
     "imagenFrente": "/productos/suketyl/frente.png",
     "imagenReverso": "/productos/suketyl/reverso.jpeg"
@@ -217,12 +244,15 @@
     "presentacion": "Ampolletas",
     "precio": 155,
     "ancla": true,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al mantenimiento de la función cognitiva y el bienestar mental",
+      "Apoya la concentración y el desempeño en actividades diarias",
+      "Aporta vitaminas y nutrientes esenciales para complementar la alimentación",
+      "Contribuye al bienestar físico y mental como parte de un estilo de vida saludable"
     ],
     "imagenFrente": "/productos/compuesto/frente.jpg",
     "imagenReverso": "/productos/compuesto/reverso.jpeg"
@@ -236,12 +266,15 @@
     "presentacion": "Ampolletas",
     "precio": 95,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Apoya el bienestar físico y la vitalidad en adultos",
+      "Contribuye al mantenimiento de los niveles de energía durante las actividades diarias",
+      "Apoya el rendimiento físico en personas con actividades demandantes",
+      "Aporta ingredientes con actividad antioxidante"
     ],
     "imagenFrente": "/productos/fortalex/frente.png",
     "imagenReverso": "/productos/fortalex/reverso.jpeg"
@@ -255,12 +288,15 @@
     "presentacion": "Ampolletas",
     "precio": 135,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al aporte de vitaminas del complejo B y otros nutrientes esenciales",
+      "Apoya el metabolismo energético como parte de una alimentación equilibrada",
+      "Contribuye al bienestar físico y al rendimiento durante las actividades diarias",
+      "Complementa las necesidades nutricionales de niños, jóvenes y adultos"
     ],
     "imagenFrente": "/productos/campolonet/frente.png",
     "imagenReverso": "/productos/campolonet/reverso.jpeg"
@@ -274,12 +310,15 @@
     "presentacion": "Ampolletas",
     "precio": 155,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al bienestar y la vitalidad en adultos",
+      "Apoya las necesidades nutricionales de personas con actividades físicas y mentales demandantes",
+      "Aporta vitaminas, minerales y otros nutrientes esenciales para complementar la alimentación diaria",
+      "Contiene ingredientes seleccionados tradicionalmente utilizados en fórmulas para el bienestar masculino"
     ],
     "imagenFrente": "/productos/vitagen-hv/frente.png",
     "imagenReverso": "/productos/vitagen-hv/reverso.jpeg"
@@ -293,12 +332,15 @@
     "presentacion": "Jarabe",
     "precio": 75,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al aporte de vitaminas A y D como complemento de la alimentación diaria",
+      "Apoya las necesidades nutricionales durante las etapas de crecimiento y desarrollo",
+      "Aporta nutrientes que contribuyen al mantenimiento de huesos y dientes en condiciones normales",
+      "Complementa la alimentación con ingredientes seleccionados de origen marino"
     ],
     "imagenFrente": "/productos/bacalciferol/frente.png",
     "imagenReverso": "/productos/bacalciferol/reverso.jpeg"
@@ -312,12 +354,15 @@
     "presentacion": "Kit",
     "precio": 155,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al funcionamiento normal del hígado como parte de una dieta equilibrada.",
+      "Contribuye al mantenimiento de niveles normales de lípidos en sangre.",
+      "Favorece el metabolismo normal de las grasas",
+      "Aporta ingredientes de origen vegetal seleccionados"
     ],
     "imagenFrente": "/productos/hgc3/frente.png",
     "imagenReverso": "/productos/hgc3/reverso.jpeg"
@@ -331,12 +376,15 @@
     "presentacion": "Ampolletas",
     "precio": 145,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Contribuye al bienestar de la circulación periférica",
+      "Apoya la concentración y el enfoque durante las actividades diarias",
+      "Contribuye al mantenimiento de la función cognitiva normal",
+      "Aporta ingredientes tradicionalmente utilizados para complementar el rendimiento mental"
     ],
     "imagenFrente": "/productos/ginkgotiamin/frente.png",
     "imagenReverso": "/productos/ginkgotiamin/reverso.jpeg"
@@ -350,12 +398,15 @@
     "presentacion": "Cápsulas",
     "precio": 230,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Apoya el rendimiento físico durante la actividad deportiva",
+      "Contribuye a la resistencia y energía durante el entrenamiento",
+      "Aporta aminoácidos que complementan las necesidades nutricionales de personas activas",
+      "Favorece la recuperación muscular después del ejercicio"
     ],
     "imagenFrente": "/productos/aminocard/frente.png",
     "imagenReverso": "/productos/aminocard/reverso.jpeg"
@@ -369,12 +420,15 @@
     "presentacion": "Ampolletas",
     "precio": 145,
     "ancla": false,
-    "listoParaPublicar": false,
+    "listoParaPublicar": true,
     "metaTitle": null,
     "metaDescription": null,
-    "descripcion": "Información de beneficios pendiente de aprobación del cliente.",
+    "descripcion": "",
     "beneficios": [
-      "Información de beneficios pendiente de aprobación del cliente."
+      "Apoya los niveles de energía durante las actividades diarias",
+      "Contribuye al rendimiento físico y mental en personas con alta demanda de actividades",
+      "Complementa las necesidades nutricionales de adultos con estilos de vida activos",
+      "Aporta vitaminas y nutrientes que favorecen el bienestar general"
     ],
     "imagenFrente": "/productos/taurilaif/frente.png",
     "imagenReverso": "/productos/taurilaif/reverso.jpeg"
