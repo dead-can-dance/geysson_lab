@@ -1,0 +1,129 @@
+---
+import type { Producto } from "../lib/productos";
+import { calcularTripack, precioPromocionalTexto } from "../lib/productos";
+import { linkWhatsApp } from "../data/site";
+
+interface Props {
+  producto: Producto;
+}
+
+const { producto } = Astro.props;
+const tripack = calcularTripack(producto);
+const subtotalTexto = precioPromocionalTexto(tripack.subtotal);
+const precioFinalTexto = precioPromocionalTexto(tripack.precioFinal);
+const wa = linkWhatsApp(
+  `Hola, me interesa el Tripack de ${producto.nombre}: 3 piezas por ${precioFinalTexto}. ¿Me pueden dar más información?`
+);
+
+const posicionesMovil = [
+  "left-[11%] bottom-7 z-10 w-[39%] -rotate-[6deg] scale-90",
+  "right-[11%] bottom-7 z-20 w-[39%] rotate-[6deg] scale-90",
+  "left-1/2 bottom-0 z-30 w-[52%] -translate-x-1/2",
+];
+const posicionesDesktop = [
+  "left-[4%] bottom-14 z-10 w-[43%] -rotate-[6deg] scale-90",
+  "right-[4%] bottom-14 z-20 w-[43%] rotate-[6deg] scale-90",
+  "left-1/2 bottom-3 z-30 w-[59%] -translate-x-1/2",
+];
+---
+
+<section class="bg-gradient-to-br from-morado-oscuro via-morado-principal to-morado-medio text-white">
+  <div class="mx-auto max-w-6xl px-7 py-16 md:py-20">
+    <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-[.92fr_1.08fr] md:gap-6">
+      <div>
+      <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/35 px-[15px] py-2 font-mono text-[11px] tracking-[.13em] text-texto-header uppercase">
+        <span class="h-1.5 w-1.5 rounded-full bg-rosa-grisaceo"></span>Oferta especial
+      </span>
+
+      <h2 class="m-0 font-serif text-[52px] leading-none tracking-tight text-white md:text-[68px]">
+        TRIPACK
+      </h2>
+      <p class="mt-2 font-serif text-[25px] font-light text-lavanda-clara italic md:text-[29px]">
+        Llévate 3 piezas
+      </p>
+
+      <div class="relative mx-auto h-[270px] max-w-[430px] md:hidden">
+        <div class="absolute right-[12%] bottom-2 left-[12%] h-10 rounded-[50%] bg-black/20 blur-xl"></div>
+        {
+          posicionesMovil.map((posicion, index) =>
+            producto.imagenFrente ? (
+              <img
+                src={producto.imagenFrente}
+                alt={index === 2 ? `Tripack de ${producto.nombre}` : ""}
+                aria-hidden={index !== 2 ? "true" : undefined}
+                class={`absolute aspect-square object-contain drop-shadow-[0_18px_20px_rgba(0,0,0,.28)] ${posicion}`}
+              />
+            ) : (
+              <div class={`bg-placeholder-frente absolute aspect-square rounded-xl ${posicion}`} />
+            )
+          )
+        }
+      </div>
+
+      <div class="mt-7 inline-flex items-center gap-3 rounded-xl border border-white/15 bg-white/[.06] px-4 py-3 md:mt-8">
+        <span class="font-serif text-[60px] leading-[.85] font-semibold text-white md:text-[70px]">
+          {tripack.porcentajeDescuento}%
+        </span>
+        <span class="border-l border-white/20 pl-3 text-[17px] leading-[1.1] font-medium text-lavanda-clara">
+          de<br />descuento
+        </span>
+      </div>
+
+      <div class="mt-6 inline-flex items-end rounded-xl border border-white/15 bg-black/10 px-4 py-4 md:px-5">
+        <div>
+          <span class="mb-1.5 block font-mono text-[11px] font-medium tracking-[.14em] text-texto-header uppercase">Antes</span>
+          <span class="whitespace-nowrap text-[20px] font-medium text-lavanda-clara line-through decoration-2 decoration-rosa-grisaceo md:text-[22px]">{subtotalTexto}</span>
+        </div>
+        <div class="ml-4 border-l border-white/20 pl-4 md:ml-6 md:pl-6">
+          <span class="mb-1.5 block font-mono text-[11px] font-medium tracking-[.14em] text-texto-header uppercase">Ahora</span>
+          <span class="whitespace-nowrap font-serif text-[34px] leading-none font-semibold text-white md:text-[40px] lg:text-[44px]">{precioFinalTexto}</span>
+        </div>
+      </div>
+
+      <a
+        href={wa}
+        target="_blank"
+        rel="noopener"
+        class="mt-8 inline-flex items-center gap-2.5 rounded-full bg-verde-accion px-7 py-4 text-[15px] font-bold text-white hover:bg-verde-accion-hover hover:text-white"
+      >
+        <span class="h-2 w-2 rounded-full bg-white opacity-90"></span>Consultar por WhatsApp
+      </a>
+
+      </div>
+
+      <div class="relative -ml-3 hidden h-[410px] md:block">
+        <div class="absolute right-[7%] bottom-4 left-[7%] h-14 rounded-[50%] bg-black/30 blur-2xl"></div>
+        <div class="absolute right-[16%] bottom-4 left-[16%] h-20 rounded-[50%] border border-white/10 bg-white/10"></div>
+        {
+          posicionesDesktop.map((posicion, index) =>
+            producto.imagenFrente ? (
+              <img
+                src={producto.imagenFrente}
+                alt={index === 2 ? `Tripack de ${producto.nombre}` : ""}
+                aria-hidden={index !== 2 ? "true" : undefined}
+                class={`absolute aspect-square object-contain drop-shadow-[0_26px_28px_rgba(0,0,0,.38)] ${posicion}`}
+              />
+            ) : (
+              <div class={`bg-placeholder-frente absolute aspect-square rounded-xl ${posicion}`} />
+            )
+          )
+        }
+      </div>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 border-y border-white/20 bg-white/[.05] px-5 py-5 text-[13.5px] leading-snug text-texto-header md:grid-cols-3 md:gap-0 md:px-6">
+      <div class="flex items-center gap-3 md:pr-6">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/25 text-xs text-white">✓</span>
+        <span>Fórmula original Geysson</span>
+      </div>
+      <div class="flex items-center gap-3 md:border-l md:border-white/15 md:px-6">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/25 text-xs text-white">✓</span>
+        <span>{producto.beneficios[0]}</span>
+      </div>
+      <div class="flex items-center gap-3 md:border-l md:border-white/15 md:pl-6">
+        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/25 text-xs text-white">✓</span>
+        <span>Consulta disponibilidad por WhatsApp</span>
+      </div>
+    </div>
+  </div>
+</section>

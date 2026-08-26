@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
+import TripackPromo from "../../components/TripackPromo.astro";
 import { productos, precioTexto, relacionados } from "../../lib/productos";
 import { linkWhatsApp } from "../../data/site";
 
@@ -147,6 +148,8 @@ const metaDescripcion =
       </div>
     </div>
   </div>
+
+  <TripackPromo producto={producto} />
 
   {
     rel.length > 0 && (

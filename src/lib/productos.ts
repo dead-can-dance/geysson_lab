@@ -21,6 +21,37 @@ export const productos: Producto[] = productosData as Producto[];
 // según Cloudflare Web Analytics una vez publicado.
 export const masConsultadosSlugs = ["compuesto", "vitagen", "aminocard", "edartryl"];
 
+export interface Tripack {
+  precioUnitario: number;
+  subtotal: number;
+  porcentajeDescuento: number;
+  descuento: number;
+  precioFinal: number;
+}
+
+export function calcularTripack(producto: Producto): Tripack {
+  const precioUnitarioCentavos = Math.round(producto.precio * 100);
+  const subtotalCentavos = precioUnitarioCentavos * 3;
+  const porcentajeDescuento = 10;
+  const descuentoCentavos = Math.round((subtotalCentavos * porcentajeDescuento) / 100);
+
+  return {
+    precioUnitario: precioUnitarioCentavos / 100,
+    subtotal: subtotalCentavos / 100,
+    porcentajeDescuento,
+    descuento: descuentoCentavos / 100,
+    precioFinal: (subtotalCentavos - descuentoCentavos) / 100,
+  };
+}
+
+export function precioPromocionalTexto(precio: number): string {
+  const tieneCentavos = !Number.isInteger(precio);
+  return `$${precio.toLocaleString("es-MX", {
+    minimumFractionDigits: tieneCentavos ? 2 : 0,
+    maximumFractionDigits: 2,
+  })} MXN`;
+}
+
 export function precioTexto(producto: Producto): string {
   return `$${producto.precio}.00 MXN`;
 }
