@@ -6,11 +6,11 @@ export const site = {
   nombre: "Neurocebryl",
   razonSocial: "Geysson",
   // Pendiente: número real de WhatsApp receptor (brief sección 8)
-  whatsapp: "5215555555555",
-  correoContacto: "", // pendiente
-  facebook: "", // pendiente
-  instagram: "", // pendiente
-  dominio: "geyssonmexicana.com", // sugerido por el cliente, por confirmar
+  whatsapp: "5215610013043",
+  correoContacto: "geyssonmexicana33@gmail.com",
+  facebook: "https://www.facebook.com/profile.php?id=100054254450354",
+  instagram: "https://www.instagram.com/geyssonmexicana/",
+  dominio: "geyssonmexicana.com", // confirmado por el cliente
 } as const;
 
 export const categorias = [

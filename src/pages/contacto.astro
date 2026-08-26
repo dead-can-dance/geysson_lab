@@ -41,12 +41,36 @@ const wa = linkWhatsApp("Hola, quiero información sobre los productos Neurocebr
           <dd class="text-morado-oscuro">{site.razonSocial}</dd>
         </div>
         <div class="flex justify-between gap-4">
+          <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Correo</dt>
+          <dd class="text-morado-oscuro">
+            <a href={`mailto:${site.correoContacto}`} class="hover:text-morado-principal"
+              >{site.correoContacto}</a
+            >
+          </dd>
+        </div>
+        <div class="flex justify-between gap-4">
+          <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">WhatsApp</dt>
+          <dd class="text-morado-oscuro">
+            <a href={wa} target="_blank" rel="noopener noreferrer" class="hover:text-morado-principal"
+              >{site.whatsapp}</a
+            >
+          </dd>
+        </div>
+        <div class="flex justify-between gap-4">
           <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Facebook</dt>
-          <dd class="text-morado-medio">pendiente</dd>
+          <dd class="text-morado-oscuro">
+            <a href={site.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-morado-principal"
+              >Ver página</a
+            >
+          </dd>
         </div>
         <div class="flex justify-between gap-4">
           <dt class="font-mono text-[11.5px] tracking-[.08em] text-lavanda-gris uppercase">Instagram</dt>
-          <dd class="text-morado-medio">pendiente</dd>
+          <dd class="text-morado-oscuro">
+            <a href={site.instagram} target="_blank" rel="noopener noreferrer" class="hover:text-morado-principal"
+              >Ver perfil</a
+            >
+          </dd>
         </div>
       </dl>
     </div>
