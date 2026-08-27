@@ -11,6 +11,7 @@ const { producto } = Astro.props;
 const tripack = calcularTripack(producto);
 const subtotalTexto = precioPromocionalTexto(tripack.subtotal);
 const precioFinalTexto = precioPromocionalTexto(tripack.precioFinal);
+const imagenPromo = `/productos/${producto.slug}/frente-promo.png`;
 const wa = linkWhatsApp(
   `Hola, me interesa el Tripack de ${producto.nombre}: 3 piezas por ${precioFinalTexto}. ¿Me pueden dar más información?`
 );
@@ -48,7 +49,7 @@ const posicionesDesktop = [
           posicionesMovil.map((posicion, index) =>
             producto.imagenFrente ? (
               <img
-                src={producto.imagenFrente}
+                src={imagenPromo}
                 alt={index === 2 ? `Tripack de ${producto.nombre}` : ""}
                 aria-hidden={index !== 2 ? "true" : undefined}
                 class={`absolute aspect-square object-contain drop-shadow-[0_18px_20px_rgba(0,0,0,.28)] ${posicion}`}
@@ -74,9 +75,9 @@ const posicionesDesktop = [
           <span class="mb-1.5 block font-mono text-[11px] font-medium tracking-[.14em] text-texto-header uppercase">Antes</span>
           <span class="whitespace-nowrap text-[20px] font-medium text-lavanda-clara line-through decoration-2 decoration-rosa-grisaceo md:text-[22px]">{subtotalTexto}</span>
         </div>
-        <div class="ml-4 border-l border-white/20 pl-4 md:ml-6 md:pl-6">
+        <div class="ml-3 border-l border-white/20 pl-3 sm:ml-4 sm:pl-4 md:ml-6 md:pl-6">
           <span class="mb-1.5 block font-mono text-[11px] font-medium tracking-[.14em] text-texto-header uppercase">Ahora</span>
-          <span class="whitespace-nowrap font-serif text-[34px] leading-none font-semibold text-white md:text-[40px] lg:text-[44px]">{precioFinalTexto}</span>
+          <span class="whitespace-nowrap font-serif text-[28px] leading-none font-semibold text-white sm:text-[34px] md:text-[40px] lg:text-[44px]">{precioFinalTexto}</span>
         </div>
       </div>
 
@@ -98,7 +99,7 @@ const posicionesDesktop = [
           posicionesDesktop.map((posicion, index) =>
             producto.imagenFrente ? (
               <img
-                src={producto.imagenFrente}
+                src={imagenPromo}
                 alt={index === 2 ? `Tripack de ${producto.nombre}` : ""}
                 aria-hidden={index !== 2 ? "true" : undefined}
                 class={`absolute aspect-square object-contain drop-shadow-[0_26px_28px_rgba(0,0,0,.38)] ${posicion}`}
