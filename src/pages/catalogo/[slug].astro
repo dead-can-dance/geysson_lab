@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
+import TripackPromo from "../../components/TripackPromo.astro";
 import { productos, precioTexto, relacionados } from "../../lib/productos";
 import { linkWhatsApp } from "../../data/site";
 
@@ -28,6 +29,8 @@ const metaDescripcion =
     >
     <span>/</span><span class="text-morado-oscuro">{producto.nombre}</span>
   </div>
+
+  <TripackPromo producto={producto} />
 
   <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-7 pt-7 pb-20 md:grid-cols-2 md:gap-[60px]">
     <div class="flex flex-col gap-3 md:sticky md:top-[92px] md:self-start">

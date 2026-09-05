@@ -8,7 +8,23 @@ const wa = linkWhatsApp("Hola, tengo una duda sobre los productos Neurocebryl.")
   href={wa}
   target="_blank"
   rel="noopener"
-  class="fixed right-6 bottom-6 z-[80] inline-flex items-center gap-2.5 rounded-full bg-verde-accion px-[22px] py-[15px] text-[14.5px] font-bold text-white shadow-[0_14px_30px_rgba(60,33,53,.32)] hover:bg-verde-accion-hover hover:text-white"
+  aria-label="Escríbenos por WhatsApp"
+  class="group fixed right-3 bottom-[calc(.75rem+env(safe-area-inset-bottom))] z-[80] flex flex-col items-end gap-0 rounded-2xl transition-transform duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-morado-principal motion-reduce:transform-none sm:right-6 sm:bottom-[calc(1.25rem+env(safe-area-inset-bottom))] sm:flex-row sm:gap-2"
 >
-  <span class="h-[9px] w-[9px] rounded-full bg-white opacity-90"></span>¿Dudas? Escríbenos
+  <span class="relative z-10 mr-1 mb-[-3px] inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-borde-suave bg-crema px-2 py-1 text-[11px] font-bold text-morado-oscuro shadow-[0_6px_18px_rgba(60,33,53,.18)] sm:mr-0 sm:mb-[58px] sm:gap-1.5 sm:px-3 sm:py-2 sm:text-[13px]">
+    <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-verde-accion sm:h-2 sm:w-2" aria-hidden="true"></span>
+    ¿Te ayudo?
+    <span class="absolute right-[-5px] bottom-2 h-2.5 w-2.5 rotate-45 border-r border-b border-borde-suave bg-crema" aria-hidden="true"></span>
+  </span>
+
+  <span class="relative block h-[80px] w-[56px] shrink-0 overflow-hidden drop-shadow-[0_10px_14px_rgba(60,33,53,.32)] sm:h-[102px] sm:w-[71px]" aria-hidden="true">
+    <img
+      src="/brand/mascota-geysson.png"
+      alt=""
+      width="1000"
+      height="1600"
+      decoding="async"
+      class="absolute left-0 top-[-5.9%] h-[111.75%] w-full max-w-none transition-transform duration-200 ease-out group-hover:scale-[1.02] motion-reduce:transform-none"
+    />
+  </span>
 </a>
