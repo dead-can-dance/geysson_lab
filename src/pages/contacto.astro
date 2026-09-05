@@ -97,13 +97,24 @@ const wa = linkWhatsApp("Hola, quiero información sobre los productos Neurocebr
         </div>
         <div>
           <label for="correo" class="mb-1.5 block text-[13px] font-semibold text-morado-oscuro"
-            >Correo o teléfono</label
+            >Correo electrónico</label
           >
           <input
             id="correo"
             name="correo"
-            type="text"
+            type="email"
             required
+            class="w-full rounded-lg border border-plata bg-white px-3.5 py-2.5 text-[15px] text-morado-oscuro outline-none focus:border-morado-principal"
+          />
+        </div>
+        <div>
+          <label for="telefono" class="mb-1.5 block text-[13px] font-semibold text-morado-oscuro"
+            >Teléfono <span class="font-normal text-lavanda-gris">(opcional)</span></label
+          >
+          <input
+            id="telefono"
+            name="telefono"
+            type="tel"
             class="w-full rounded-lg border border-plata bg-white px-3.5 py-2.5 text-[15px] text-morado-oscuro outline-none focus:border-morado-principal"
           />
         </div>
@@ -120,41 +131,65 @@ const wa = linkWhatsApp("Hola, quiero información sobre los productos Neurocebr
           ></textarea>
         </div>
 
-        <!--
-          TODO (pendiente de publicación): widget de Cloudflare Turnstile.
-          Requiere un site key real, emitido desde el dashboard de Cloudflare
-          una vez que el dominio esté dado de alta — ver PROJECT_BRIEF.md
-          secciones 4 y 8. Sustituir por:
-          <div class="cf-turnstile" data-sitekey="TU_SITE_KEY"></div>
-          y cargar https://challenges.cloudflare.com/turnstile/v0/api.js
-        -->
-        <div class="rounded-lg border border-dashed border-rosa-grisaceo p-3 font-mono text-[11px] text-morado-medio">
-          [placeholder] widget Cloudflare Turnstile — pendiente de site key
+        <!-- Honeypot: oculto para personas, los bots suelen rellenarlo. -->
+        <div class="absolute -left-[9999px]" tabindex="-1" aria-hidden="true">
+          <label for="empresa_web">No llenar este campo</label>
+          <input type="text" id="empresa_web" name="empresa_web" tabindex="-1" autocomplete="off" />
         </div>
+
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEpSy5YvEDu7QPV4"></div>
 
         <button
           type="submit"
-          class="mt-1 rounded-full bg-morado-principal px-6 py-3 text-[15px] font-bold text-white hover:bg-morado-medio"
+          class="mt-1 rounded-full bg-morado-principal px-6 py-3 text-[15px] font-bold text-white hover:bg-morado-medio disabled:cursor-not-allowed disabled:opacity-60"
         >
           Enviar mensaje
         </button>
-        <p id="form-estado" class="hidden text-[13.5px] text-morado-medio" role="status"></p>
+        <p id="form-estado" class="hidden text-[13.5px]" role="status"></p>
       </form>
     </div>
   </section>
 </BaseLayout>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
-  // TODO (pendiente de publicación): conectar a una Cloudflare Pages
-  // Function en /api/contacto que valide el token de Turnstile y envíe el
-  // correo al buzón receptor (aún no definido — PROJECT_BRIEF.md sección 8).
+  declare global {
+    interface Window {
+      turnstile?: { reset: () => void };
+    }
+  }
+
   const form = document.getElementById("form-contacto") as HTMLFormElement;
   const estado = document.getElementById("form-estado")!;
+  const boton = form.querySelector("button[type=submit]") as HTMLButtonElement;
 
-  form.addEventListener("submit", (e) => {
+  function mostrarEstado(mensaje: string, tipo: "info" | "exito" | "error") {
+    estado.textContent = mensaje;
+    estado.classList.remove("hidden", "text-morado-medio", "text-verde-accion-hover", "text-estrellas");
+    const color =
+      tipo === "exito" ? "text-verde-accion-hover" : tipo === "error" ? "text-estrellas" : "text-morado-medio";
+    estado.classList.add(color);
+  }
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    estado.textContent =
-      "Formulario aún no conectado al backend (pendiente de hosting/dominio final).";
-    estado.classList.remove("hidden");
+    boton.disabled = true;
+    mostrarEstado("Enviando...", "info");
+
+    try {
+      const res = await fetch("/api/contacto", {
+        method: "POST",
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      mostrarEstado(data.ok ? data.mensaje : data.error, data.ok ? "exito" : "error");
+      if (data.ok) form.reset();
+    } catch {
+      mostrarEstado("No se pudo enviar. Escríbenos por WhatsApp.", "error");
+    } finally {
+      boton.disabled = false;
+      if (window.turnstile) window.turnstile.reset();
+    }
   });
 </script>
